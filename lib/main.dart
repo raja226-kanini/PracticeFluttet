@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paractice_flutter/views/app_life_cycle.dart';
 import 'package:paractice_flutter/views/getstart_screen.dart';
 import 'package:paractice_flutter/views/login_screen.dart';
 import 'package:paractice_flutter/views/registration_screen.dart';
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-     home: LoginScreen(),
+     home: AppLifecycle(),
      debugShowCheckedModeBanner: false,
     );
   }
