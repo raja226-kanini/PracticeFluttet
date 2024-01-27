@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paractice_flutter/views/getstart_screen.dart';
 import 'package:paractice_flutter/views/registration_screen.dart';
 
 void main() {
@@ -11,7 +12,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-     home: RegistrationScreen(),
+     home: GetStartScreen(),
      debugShowCheckedModeBanner: false,
     );
   }
