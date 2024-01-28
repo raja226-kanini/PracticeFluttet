@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-import 'package:paractice_flutter/viewmodel/user_model.dart';
+import 'package:paractice_flutter/models/user_model.dart';
 
 class GetUsersScreen extends StatefulWidget {
   const GetUsersScreen({super.key});
