@@ -9,6 +9,7 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+
   SizedBox spacebetweentheTextFields = const SizedBox(
     height: 16,
   );
