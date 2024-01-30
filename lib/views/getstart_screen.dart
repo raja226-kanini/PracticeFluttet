@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:video_player/video_player.dart';
 
 class GetStartScreen extends StatefulWidget {
   const GetStartScreen({super.key});
@@ -10,18 +11,43 @@ class GetStartScreen extends StatefulWidget {
 }
 
 class _GetStartScreenState extends State<GetStartScreen> {
+  late VideoPlayerController _videoPlayerController;
+  @override
+  void initState() {
+    super.initState();
+    _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")) 
+    ..initialize().then((_){
+      _videoPlayerController.play();
+      _videoPlayerController.setLooping(true);
+      setState(() {
+        
+      });
+
+    });
+  }
+  @override
+  void dispose() {
+    super.dispose();
+    _videoPlayerController.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         body: Stack(
       children: [
-        CachedNetworkImage(
-          imageUrl:
-              "https://i.pinimg.com/originals/e0/34/06/e03406f94eb137b4cceb62c99d171ad1.png",
-          fit: BoxFit.cover,
-          height: double.infinity,
-          width: double.infinity,
-        ),
+        SizedBox(
+          child: VideoPlayer(_videoPlayerController),
+          width: _videoPlayerController.value.size?.width ?? 0,
+          height: _videoPlayerController.value.size?.height ?? 0,
+
+          ),
+        // CachedNetworkImage(
+        //   imageUrl:
+        //       "https://i.pinimg.com/originals/e0/34/06/e03406f94eb137b4cceb62c99d171ad1.png",
+        //   fit: BoxFit.cover,
+        //   height: double.infinity,
+        //   width: double.infinity,
+        // ),
         Container(
           color: Colors.black.withOpacity(0.3),
         ),
