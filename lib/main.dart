@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:paractice_flutter/views/animationImage_screen.dart';
 import 'package:paractice_flutter/views/api_implement_screen.dart';
 import 'package:paractice_flutter/views/app_life_cycle.dart';
 import 'package:paractice_flutter/views/getstart_screen.dart';
@@ -16,7 +17,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-     home: GetStartScreen(),
+     home: AnimationImageScreen(),
      debugShowCheckedModeBanner: false,
     );
   }

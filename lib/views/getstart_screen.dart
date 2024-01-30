@@ -15,7 +15,9 @@ class _GetStartScreenState extends State<GetStartScreen> {
   @override
   void initState() {
     super.initState();
-    _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4")) 
+    //https://vod-progressive.akamaized.net/exp=1706610811~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F412%2F15%2F377060855%2F1574471274.mp4~hmac=12f966ef4a7554492bb36b344e7a1d77f095dbbb251c9553d401089d32d7cdac/vimeo-prod-skyfire-std-us/01/412/15/377060855/1574471274.mp4
+    //https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4
+    _videoPlayerController = VideoPlayerController.networkUrl(Uri.parse("https://vod-progressive.akamaized.net/exp=1706610811~acl=%2Fvimeo-prod-skyfire-std-us%2F01%2F412%2F15%2F377060855%2F1574471274.mp4~hmac=12f966ef4a7554492bb36b344e7a1d77f095dbbb251c9553d401089d32d7cdac/vimeo-prod-skyfire-std-us/01/412/15/377060855/1574471274.mp4")) 
     ..initialize().then((_){
       _videoPlayerController.play();
       _videoPlayerController.setLooping(true);
@@ -35,12 +37,19 @@ class _GetStartScreenState extends State<GetStartScreen> {
     return Scaffold(
         body: Stack(
       children: [
-        SizedBox(
-          child: VideoPlayer(_videoPlayerController),
-          width: _videoPlayerController.value.size?.width ?? 0,
-          height: _videoPlayerController.value.size?.height ?? 0,
-
+        SizedBox.expand(
+          child: FittedBox(
+            fit: BoxFit.none,
+            child: SizedBox(
+              //Network Video
+              child: VideoPlayer(_videoPlayerController),
+              width: _videoPlayerController.value.size?.width ?? 0,
+              height: _videoPlayerController.value.size?.height ?? 0,
+              ),
           ),
+        ),
+
+          //For network Image 
         // CachedNetworkImage(
         //   imageUrl:
         //       "https://i.pinimg.com/originals/e0/34/06/e03406f94eb137b4cceb62c99d171ad1.png",
