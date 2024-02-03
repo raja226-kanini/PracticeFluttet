@@ -59,6 +59,16 @@ class _AnimationImageScreenState extends State<AnimationImageScreen> {
   void updateImageList(BuildContext context) async {
     for (int i = 1; i <= 9; i++) {
       imageList.add(AssetImage('assets/$i.png'));
+      //if user wan to load from API :
+      //NetworkImage('https://example.com/images/$i.png'
+      // if the image is in svg formatte :
+      // SvgPicture.network(
+      //     'https://example.com/your_svg_image.svg',
+      //     width: 200,
+      //     height: 200,
+      //     // You can customize other properties here
+      //   ),
+
       await precacheImage(AssetImage('assets/$i.png'), context);
     }
     setState(() {
