@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:paractice_flutter/views/home_screen.dart';
 import 'package:paractice_flutter/views/registration_screen.dart';
 import 'package:paractice_flutter/views/videoscreen.dart';
+import 'package:paractice_flutter/widgets/drawer_item_widget.dart';
 
 class DashBoardScreen extends StatefulWidget {
   const DashBoardScreen({super.key});
@@ -33,6 +34,41 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
           IconButton(onPressed: () {}, icon: Icon(Icons.logout))
         ],
       ),
+      drawer: Drawer(
+        backgroundColor: Colors.white,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              width: double.infinity,
+              child: DrawerHeader(child: Text("Drawer header"), decoration: BoxDecoration(
+                color: Colors.blue,
+              )),
+            ),
+            DrawerItemWidget(titleValue:"Home", onTap: (){
+              print("Home");
+            }, ),
+            DrawerItemWidget(titleValue: "Logout",onTap: (){
+                            print("Logout");
+
+            },),
+            DrawerItemWidget(titleValue: "Gogula", onTap: () {
+                            print("Gogula");
+
+            },),
+
+
+          //   TextButton(onPressed: (){}, child: Text("Home")),
+          //   Divider(),
+          //  // TextButton(onPressed: (){}, child: Text("Logout")),
+          //   TextButton.icon(onPressed: 
+          //   (){}, icon: Icon(Icons.logout), label: Text("Logout")),
+          //   Divider(),
+
+          ],
+        ),
+      ),
+      //endDrawer: Drawer(),
       bottomNavigationBar: BottomNavigationBar(
         //backgroundColor: Colors.grey,
         currentIndex: currentIndexdata,
