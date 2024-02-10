@@ -13,17 +13,25 @@ class _ListViewScreenState extends State<ListViewScreen> {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
-      appBar: AppBar(title: Text("Listview"),backgroundColor: Colors.deepOrangeAccent,),
+      appBar: AppBar(title: const Text("Listview"),backgroundColor: Colors.deepOrangeAccent,),
       backgroundColor: Colors.cyanAccent,
-      body: ListView(
-        //mainAxisAlignment: MainAxisAlignment.start,
-        padding: EdgeInsets.all(18),
-        reverse: false,
+      body: Column(
         children: [
-       myContainer(containerheight: 300,index: 1, color: const Color.fromARGB(137, 214, 101, 101)),
-       myContainer(containerheight: 300,index: 2, color: Color.fromARGB(136, 70, 52, 201)),
-       myContainer(containerheight: 300,index: 3, color: Color.fromARGB(136, 58, 35, 35)),
-
+          SizedBox(
+            height:  200,
+            width: double.infinity,
+            child: ListView(
+              padding: EdgeInsets.all(18),
+              reverse: true,
+              scrollDirection: Axis.horizontal,
+              children: [
+             myContainer(containerheight: 300,index: 1, color: const Color.fromARGB(137, 214, 101, 101)),
+             myContainer(containerheight: 300,index: 2, color: const Color.fromARGB(136, 70, 52, 201)),
+             myContainer(containerheight: 300,index: 3, color: const Color.fromARGB(136, 58, 35, 35)),
+            
+              ],
+            ),
+          ),
         ],
       ),
     );
@@ -32,7 +40,8 @@ class _ListViewScreenState extends State<ListViewScreen> {
     return Container(
         color: color,
         height: containerheight,
-        width: double.infinity,
+        width: MediaQuery.of(context).size.width *0.9,
+       // width: double.infinity,
         child:   Center(child: Text("$index", style: TextStyle(fontSize: 120),)),
       );
   }
