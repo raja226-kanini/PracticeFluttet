@@ -25,12 +25,17 @@ class _ListviewBuilderScreenState extends State<ListviewBuilderScreen> {
   }
 
      Widget myContainer({required String index, required double containerheight, Color color = Colors.green } ){
-    return Container(
-        color: color,
-        height: containerheight,
-        width: double.infinity,
-        child:   Center(child: Text("$index", style: TextStyle(fontSize: 120),)),
-      );
+    return Column(
+      children: [
+        Container(
+            color: color,
+            height: containerheight,
+            width: double.infinity,
+            child:   Center(child: Text("$index", style: TextStyle(fontSize: 120),)),
+          ),
+          Divider(),
+      ],
+    );
   }
 }
 
@@ -58,9 +63,7 @@ class _ListTailScreenState extends State<ListTailScreen> {
           title: Text(frameWorkList[index]),
           subtitle:Text("sub title",textAlign: TextAlign.start,maxLines: 1,overflow: TextOverflow.ellipsis,) ,
           onTap: () {
-          
                // AppdynamicsAgent.trackEvent('CustomEventName');
-
             Navigator.push(context, MaterialPageRoute(builder: (context) => ListViewDetailsScreen(),));
           },
         );

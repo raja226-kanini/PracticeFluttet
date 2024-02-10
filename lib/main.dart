@@ -8,6 +8,7 @@ import 'package:paractice_flutter/views/getstart_screen.dart';
 import 'package:paractice_flutter/views/intrestcaluculator_screen.dart';
 import 'package:paractice_flutter/views/listview_builder_screen.dart';
 import 'package:paractice_flutter/views/listview_screen.dart';
+import 'package:paractice_flutter/views/listviewitemseparator.dart';
 import 'package:paractice_flutter/views/login_screen.dart';
 import 'package:paractice_flutter/views/registration_screen.dart';
 import 'package:paractice_flutter/views/shaped_screen.dart';
@@ -39,7 +40,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
       primaryColor: Colors.indigo,
      ),
-     home: ListViewScreen(),
+     home: ListviewItemSeparatorScreen(),
      debugShowCheckedModeBanner: false,
      
     );
