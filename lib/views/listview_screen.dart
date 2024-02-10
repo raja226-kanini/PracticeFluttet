@@ -1,6 +1,7 @@
 import 'dart:ffi';
 
 import 'package:flutter/material.dart';
+import 'package:paractice_flutter/widgets/listviewItem_container.dart';
 
 class ListViewScreen extends StatefulWidget {
   const ListViewScreen({super.key});
@@ -25,9 +26,9 @@ class _ListViewScreenState extends State<ListViewScreen> {
               reverse: true,
               scrollDirection: Axis.horizontal,
               children: [
-             myContainer(containerheight: 300,index: 1, color: const Color.fromARGB(137, 214, 101, 101)),
-             myContainer(containerheight: 300,index: 2, color: const Color.fromARGB(136, 70, 52, 201)),
-             myContainer(containerheight: 300,index: 3, color: const Color.fromARGB(136, 58, 35, 35)),
+             ListviewItemWidget(containerheight: 300,indexVal: 1, color: const Color.fromARGB(137, 214, 101, 101)),
+             ListviewItemWidget(containerheight: 300,indexVal: 2, color: const Color.fromARGB(136, 70, 52, 201)),
+             ListviewItemWidget(containerheight: 300,indexVal: 3, color: const Color.fromARGB(136, 58, 35, 35)),
             
               ],
             ),
@@ -36,13 +37,5 @@ class _ListViewScreenState extends State<ListViewScreen> {
       ),
     );
   }
-   Widget myContainer({required int index, required double containerheight, Color color = Colors.green } ){
-    return Container(
-        color: color,
-        height: containerheight,
-        width: MediaQuery.of(context).size.width *0.9,
-       // width: double.infinity,
-        child:   Center(child: Text("$index", style: TextStyle(fontSize: 120),)),
-      );
-  }
+
 }
