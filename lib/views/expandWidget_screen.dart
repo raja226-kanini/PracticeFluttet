@@ -10,6 +10,7 @@ class ExpandedWidgetScreen extends StatefulWidget {
 class _MyWidgetState extends State<ExpandedWidgetScreen> {
   bool ischeckBoxselected = false;
   int isRadioselected = 0;
+  String? selectedDropdownmenuValue ;
 
   @override
   Widget build(BuildContext context) {
@@ -49,35 +50,62 @@ class _MyWidgetState extends State<ExpandedWidgetScreen> {
               ],
             ),
             CheckboxListTile(
-              controlAffinity: ListTileControlAffinity.leading,
-              title: Text("Custum Terms and Conditions"),
+                controlAffinity: ListTileControlAffinity.leading,
+                title: Text("Custum Terms and Conditions"),
                 value: ischeckBoxselected,
                 onChanged: (isselected) {
                   setState(() {
                     ischeckBoxselected = isselected ?? false;
                   });
-                })
-          
-          ,
-          RadioListTile(title: Text("Male"), value: 0, groupValue: isRadioselected, onChanged: (value){
-            isRadioselected = value ?? 0;
-            setState(() {
-              
-            });
-          }),
-                    RadioListTile(title: Text("Female"),value: 1, groupValue: isRadioselected, onChanged: (value){
-            isRadioselected = value ?? 1;
-                        setState(() {
-              
-            });
-          }),
-                    RadioListTile(title: Text("Transgender"),value: 2, groupValue: isRadioselected, onChanged: (value){
-            isRadioselected = value ?? 2;
-                        setState(() {
-              
-            });
-          }),
-
+                }),
+            RadioListTile(
+                title: Text("Male"),
+                value: 0,
+                groupValue: isRadioselected,
+                onChanged: (value) {
+                  isRadioselected = value ?? 0;
+                  setState(() {});
+                }),
+            RadioListTile(
+                title: Text("Female"),
+                value: 1,
+                groupValue: isRadioselected,
+                onChanged: (value) {
+                  isRadioselected = value ?? 1;
+                  setState(() {});
+                }),
+            RadioListTile(
+                title: Text("Transgender"),
+                value: 2,
+                groupValue: isRadioselected,
+                onChanged: (value) {
+                  isRadioselected = value ?? 2;
+                  setState(() {});
+                }),
+            DropdownButton(
+              value: selectedDropdownmenuValue,
+              items: [
+              DropdownMenuItem(
+                child: Text("Raja"),
+                value: "RA",
+              ),
+              DropdownMenuItem(
+                child: Text("Gogula"),
+                value: "GG",
+              ),
+              DropdownMenuItem(
+                child: Text("Veeramma"),
+                value: "VR",
+              ),
+              DropdownMenuItem(
+                child: Text("Amma"),
+                value: "AM",
+              ),
+            ], onChanged: (value) {
+              setState(() {
+                selectedDropdownmenuValue = value ?? '';
+              });
+            }),
           ],
         ),
       ),
