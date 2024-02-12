@@ -4,6 +4,7 @@ import 'package:paractice_flutter/views/animationImage_screen.dart';
 import 'package:paractice_flutter/views/api_implement_screen.dart';
 import 'package:paractice_flutter/views/app_life_cycle.dart';
 import 'package:paractice_flutter/views/dashboard_screen.dart';
+import 'package:paractice_flutter/views/expandWidget_screen.dart';
 import 'package:paractice_flutter/views/getstart_screen.dart';
 import 'package:paractice_flutter/views/gridview_builder.dart';
 import 'package:paractice_flutter/views/intrestcaluculator_screen.dart';
@@ -41,7 +42,7 @@ class MainApp extends StatelessWidget {
       theme: ThemeData(
       primaryColor: Colors.indigo,
      ),
-     home: GridViewBuilderScreen(),
+     home: ExpandedWidgetScreen(),
      debugShowCheckedModeBanner: false,
      
     );

@@ -30,7 +30,17 @@ class _DashBoardScreenState extends State<DashBoardScreen> {
             icon: Icon(Icons.search_outlined),
             color: Colors.white,
           ),
-          IconButton(onPressed: () {}, icon: Icon(Icons.notification_add)),
+          IconButton(onPressed: () {
+            showBottomSheet(context: context, builder: (context){
+              return Column(
+                children: [
+                  ListTile(title: Text("Test 1"),),
+                  ListTile(title: Text("Test 2"),),
+
+                ],
+              );
+            });
+          }, icon: Icon(Icons.filter_alt_off_outlined)),
           IconButton(onPressed: () {}, icon: Icon(Icons.logout))
         ],
       ),
