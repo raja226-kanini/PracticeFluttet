@@ -11,6 +11,7 @@ class _MyWidgetState extends State<ExpandedWidgetScreen> {
   bool ischeckBoxselected = false;
   int isRadioselected = 0;
   String? selectedDropdownmenuValue ;
+  List <String> listofBanks = ["HDFC","SBI","Union","RBI"];
 
   @override
   Widget build(BuildContext context) {
@@ -84,24 +85,26 @@ class _MyWidgetState extends State<ExpandedWidgetScreen> {
                 }),
             DropdownButton(
               value: selectedDropdownmenuValue,
-              items: [
-              DropdownMenuItem(
-                child: Text("Raja"),
-                value: "RA",
-              ),
-              DropdownMenuItem(
-                child: Text("Gogula"),
-                value: "GG",
-              ),
-              DropdownMenuItem(
-                child: Text("Veeramma"),
-                value: "VR",
-              ),
-              DropdownMenuItem(
-                child: Text("Amma"),
-                value: "AM",
-              ),
-            ], onChanged: (value) {
+              items: listofBanks.map((e) => DropdownMenuItem(value: e,child: Text(e))).toList(),
+            //   items: [
+            //   DropdownMenuItem(
+            //     child: Text("Raja"),
+            //     value: "RA",
+            //   ),
+            //   DropdownMenuItem(
+            //     child: Text("Gogula"),
+            //     value: "GG",
+            //   ),
+            //   DropdownMenuItem(
+            //     child: Text("Veeramma"),
+            //     value: "VR",
+            //   ),
+            //   DropdownMenuItem(
+            //     child: Text("Amma"),
+            //     value: "AM",
+            //   ),
+            // ],
+             onChanged: (value) {
               setState(() {
                 selectedDropdownmenuValue = value ?? '';
               });
