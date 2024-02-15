@@ -15,8 +15,7 @@ class _MySnackbarScreenState extends State<MySnackbarScreen> {
       backgroundColor: Colors.blue,
       appBar: AppBar(title: Text("My SnakBar"),),
       body: Center(child: ElevatedButton(onPressed: (){
-
-        MySnackbar.show(context, "Hi Rajasekhar", logo: Icon(Icons.car_rental));
+        MySnackbar.show(context, "Hi Rajasekhar", logo: Icon(Icons.car_rental), fromTop: true);
       },
        child: Text('Show the SnakBar'))),
     );
