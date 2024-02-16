@@ -13,11 +13,11 @@ class _MySnackbarScreenState extends State<MySnackbarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.blue,
-      appBar: AppBar(title: Text("My SnakBar"),),
+      appBar: AppBar(title: const Text("My SnakBar"),),
       body: Center(child: ElevatedButton(onPressed: (){
-        MySnackbar.show(context, "Hi Rajasekhar", logo: Icon(Icons.car_rental), fromTop: true);
+        MySnackbar.show(context, "Hi Rajasekhar", logo: const Icon(Icons.car_rental,color: Colors.white), fromTop: true , secondsValue: 05);
       },
-       child: Text('Show the SnakBar'))),
+       child: const Text('Show the SnakBar'))),
     );
   }
-}
+} 
